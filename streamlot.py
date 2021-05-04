@@ -9,7 +9,7 @@ import streamlit as st
 
 
 def is_authenticated(password):
-    return password == "admin"
+    st.secrets['DB_PASSWORD']
 
 
 def generate_login_block():
