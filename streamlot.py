@@ -8,44 +8,17 @@ Created on Fri Apr 30 11:53:11 2021
 import streamlit as st
 import os 
 
-def is_authenticated(password):
-    os.environ['DB_PASSWORD']
+import streamlit as st
 
+# Everything is accessible via the st.secrets dict:
 
-def generate_login_block():
-    block1 = st.empty()
-    block2 = st.empty()
+st.write("DB username:", st.secrets["db_username"])
+st.write("DB password:", st.secrets["DB_PASSWORD"])
+st.write("My cool secrets:", st.secrets["my_cool_secrets"]["things_i_like"])
 
-    return block1, block2
+# And the root-level secrets are also accessible as environment variables:
 
-
-def clean_blocks(blocks):
-    for block in blocks:
-        block.empty()
-
-
-def login(blocks):
-    blocks[0].markdown("""
-            <style>
-                input {
-                    -webkit-text-security: disc;
-                }
-            </style>
-        """, unsafe_allow_html=True)
-
-    return blocks[1].text_input('Password')
-
-
-def main():
-    st.header('Hello')
-    st.balloons()
-
-
-login_blocks = generate_login_block()
-password = login(login_blocks)
-
-if is_authenticated(password):
-    clean_blocks(login_blocks)
-    main()
-elif password:
-    st.info("Please enter a valid password")
+import os
+st.write("Has environment variables been set:",
+os.environ["db_username"] == st.secrets["db_username"]
+)
