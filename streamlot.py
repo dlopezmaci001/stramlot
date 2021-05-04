@@ -6,10 +6,10 @@ Created on Fri Apr 30 11:53:11 2021
 """
 
 import streamlit as st
-
+import os 
 
 def is_authenticated(password):
-    st.secrets['DB_PASSWORD']
+    os.environ['DB_PASSWORD']
 
 
 def generate_login_block():
