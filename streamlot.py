@@ -9,8 +9,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image 
 import streamlit as st
-from pandas_profiling import ProfileReport
-from streamlit_pandas_profiling import st_profile_report
+import "github.com/parnurzeal/gorequest"
 # =============================================================================
 # Function creation
 # =============================================================================
