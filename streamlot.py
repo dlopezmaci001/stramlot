@@ -93,7 +93,7 @@ def main():
     task = st.sidebar.radio('Task', ['Alta Usuarios', 'Maestro'], 0)
     if task == 'Alta Usuarios':
         st.write('A general purpose data exploration app')
-        st.write( st.secrets["DB_USER"])
+        st.write(st.secrets["DB_USER"])
         variable = st.text_area('Input name of client')
         file = st.file_uploader("Upload file", type=['csv' 
                                                      ,'xlsx'])
@@ -102,7 +102,7 @@ def main():
             return
         df = get_df(file)
         
-        fast_server_nimerya(df,st.secrets["DB_NAME"],"sectionaccess_bimbo_prueba",'append')
+        fast_server_nimerya(df,st.secrets["DB_USER"],"sectionaccess_bimbo_prueba",'append')
         
     else:
         st.write("esto para otra cosa")
