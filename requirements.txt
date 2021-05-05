@@ -6,4 +6,4 @@ pandas==1.0.5
 numpy==1.18.5
 matplotlib==3.2.2
 fast-to-sql==2.1.14
-psycopg2==2.8.5
+psycopg2-binary==2.8.6
