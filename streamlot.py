@@ -73,10 +73,4 @@ def main():
 # Run app 
 # =============================================================================
 
-login_blocks = generate_login_block()
-password = login(login_blocks)
-
-auth = is_authenticated(password)
-
-# st.secrets["DB_PASSWORD"]
 main()
