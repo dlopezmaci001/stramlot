@@ -14,7 +14,7 @@ from sqlalchemy import create_engine
 # Function creation
 # =============================================================================
 
-conn = create_engine('postgresql://'+"'" + st.secrets["DB_USERNAME"]+ "':"+ "'" + st.secrets["DB_PASSWORD"]+ "'@"+st.secrets["DB_SERVER"]+:5439"+'/bimbo')
+conn = create_engine('postgresql://'+"'" + st.secrets["DB_USERNAME"]+ "':"+ "'" + st.secrets["DB_PASSWORD"]+ "'@"+st.secrets["DB_SERVER"]+":5439/bimbo')
 
 
 def fast_server_nimerya(database_name,df,tablename,if_exists):
