@@ -36,7 +36,7 @@ def fast_server_nimerya(database_name,df,tablename,if_exists):
     conn = pyodbc.connect('DRIVER={SQL Server};SERVER='+ "'"+st.secrets["DB_SERVER"]+ "'" +
                                      ';DATABASE='+'bimbo'+
                                      ';UID='+ "'" + st.secrets["DB_USERNAME"]+ "'"+
-                                     ';PWD='+ "'" + "'"st.secrets["DB_PASSWORD"]+ "'")
+                                     ';PWD='+ "'" + st.secrets["DB_PASSWORD"]+ "'")
     
     # =============================================================================
     # Upload de dataframe  
