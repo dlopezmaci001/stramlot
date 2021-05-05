@@ -44,8 +44,6 @@ def get_df(file):
     df = pd.read_csv(file)
   elif extension.upper() == 'XLSX':
     df = pd.read_excel(file, engine='openpyxl')
-  elif extension.upper() == 'PICKLE':
-    df = pd.read_pickle(file)
   return df
 
 def main():
@@ -58,8 +56,7 @@ def main():
         st.write('A general purpose data exploration app')
         variable = st.text_area('Input name of client')
         file = st.file_uploader("Upload file", type=['csv' 
-                                                     ,'xlsx'
-                                                     ,'pickle'])
+                                                     ,'xlsx'])
         if not file:
             st.write("Upload a .csv or .xlsx file to get started")
             return
