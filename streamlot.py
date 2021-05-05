@@ -33,7 +33,7 @@ def fast_server_nimerya(database_name,df,tablename,if_exists):
     the dataframe will be the same column names you will have in the database. 
 
     """       
-    conn = pyodbc.connect('DRIVER={SQL Server}; + SERVER='+ "'"+st.secrets["DB_SERVER"]+ "'" +
+    conn = pyodbc.connect('DRIVER={/opt/microsoft/msodbcsql17/lib64/libmsodbcsql-17.0.so.1.1}; + SERVER='+ "'"+st.secrets["DB_SERVER"]+ "'" +
                                      ';DATABASE='+'bimbo'+
                                      ';UID='+ "'" + st.secrets["DB_USERNAME"]+ "'"+
                                      ';PWD='+ "'" + st.secrets["DB_PASSWORD"]+ "'")
