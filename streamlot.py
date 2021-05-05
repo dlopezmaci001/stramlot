@@ -53,7 +53,7 @@ def main():
     st.title('Explore a dataset')
     # Side bar 
     st.sidebar.header("Elija su opcion")
-    st.sidebar.radio('Task', ['Alta Usuarios', 'Maestro'], 0)
+    task = st.sidebar.radio('Task', ['Alta Usuarios', 'Maestro'], 0)
     
     st.write('A general purpose data exploration app')
     variable = st.text_area('Input name of client')
@@ -67,10 +67,10 @@ def main():
     print(df.head())
     
 
-    # if task == 'Alta Usuarios':
-    #     st.write("Carga Maestro")
-    # else:
-    #     st.write("esto para otra cosa")
+    if task == 'Alta Usuarios':
+        st.write("Carga Maestro")
+    else:
+        st.write("esto para otra cosa")
     
 
 
