@@ -63,7 +63,7 @@ def main():
     print(df.head())
     
     # Side bar 
-    task = st.sidebar.radio('Task', ['Alta Usuarios', 'Maestro'], 0)
+    st.sidebar.radio('Task', ['Alta Usuarios', 'Maestro'], 0)
     
     # if task == 'Alta Usuarios':
     #     st.write("Carga Maestro")
