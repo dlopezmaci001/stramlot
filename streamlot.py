@@ -69,11 +69,6 @@ def main():
         st.write("esto para otra cosa")
     
     
-
-
-    
-
-
 # =============================================================================
 # Run app 
 # =============================================================================
@@ -81,9 +76,7 @@ def main():
 login_blocks = generate_login_block()
 password = login(login_blocks)
 
-if is_authenticated(password):
-    clean_blocks(login_blocks)
-    # st.secrets["DB_PASSWORD"]
-    main()
-elif password:
-    st.info("Please enter a valid password")
+auth = is_authenticated(password)
+
+# st.secrets["DB_PASSWORD"]
+main()
