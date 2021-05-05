@@ -9,7 +9,8 @@ import streamlit as st
 import pandas as pd
 from PIL import Image 
 import streamlit as st
-
+from pandas_profiling import ProfileReport
+from streamlit_pandas_profiling import st_profile_report
 # =============================================================================
 # Function creation
 # =============================================================================
@@ -61,7 +62,8 @@ def main():
             st.write("Upload a .csv or .xlsx file to get started")
             return
         df = get_df(file)
-        print(df.head())
+        pr = ProfileReport(df, explorative=True)
+        st_profile_report(pr)
     else:
         st.write("esto para otra cosa")
     
