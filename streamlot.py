@@ -60,7 +60,7 @@ def main():
         st.write("Upload a .csv or .xlsx file to get started")
         return
     df = get_df(file)
-    df.to_csv(r"C:\Users\danie\OneDrive - Nimerya Data Science\Documentos\csv_stram.csv")
+    print(df.head())
 
 # =============================================================================
 # Run app 
