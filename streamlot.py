@@ -93,7 +93,7 @@ def main():
     task = st.sidebar.radio('Task', ['Alta Usuarios', 'Maestro'], 0)
     if task == 'Alta Usuarios':
         st.write('A general purpose data exploration app')
-        st.write(st.secrets["DB_NAME"])
+        st.write( st.secrets["DB_NAME"])
         variable = st.text_area('Input name of client')
         file = st.file_uploader("Upload file", type=['csv' 
                                                      ,'xlsx'])
