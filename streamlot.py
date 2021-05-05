@@ -7,7 +7,6 @@ Created on Fri Apr 30 11:53:11 2021
 
 import streamlit as st
 import pandas as pd
-from PIL import Image 
 import pyodbc
 from fast_to_sql import fast_to_sql as fts
 # =============================================================================
@@ -90,7 +89,6 @@ def main():
     task = st.sidebar.radio('Task', ['Alta Usuarios', 'Maestro'], 0)
     if task == 'Alta Usuarios':
         st.write('A general purpose data exploration app')
-        st.secrets["DB_PASSWORD"]
         variable = st.text_area('Input name of client')
         file = st.file_uploader("Upload file", type=['csv' 
                                                      ,'xlsx'])
@@ -99,7 +97,7 @@ def main():
             return
         df = get_df(file)
         
-        fast_server_nimerya(df,st.secrets["DB_USER"],"sectionaccess_bimbo_prueba",'append')
+        fast_server_nimerya(df,st.secrets["DB_NAME"],"sectionaccess_bimbo_prueba",'append')
         
     else:
         st.write("esto para otra cosa")
