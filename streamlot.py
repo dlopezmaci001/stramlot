@@ -65,10 +65,10 @@ def main():
     # Side bar 
     task = st.sidebar.radio('Task', ['Alta Usuarios', 'Maestro'], 0)
     
-    if task == 'Alta Usuarios':
-        st.write("Carga Maestro")
-    else:
-        st.write("esto para otra cosa")
+    # if task == 'Alta Usuarios':
+    #     st.write("Carga Maestro")
+    # else:
+    #     st.write("esto para otra cosa")
     
 
 
