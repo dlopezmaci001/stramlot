@@ -9,7 +9,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image 
 import streamlit as st
-import test
+from test import print_me
 # =============================================================================
 # Function creation
 # =============================================================================
