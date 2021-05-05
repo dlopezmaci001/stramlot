@@ -33,10 +33,10 @@ def fast_server_nimerya(database_name,df,tablename,if_exists):
     the dataframe will be the same column names you will have in the database. 
 
     """       
-    conn = pyodbc.connect('DRIVER={SQL Server};SERVER='+st.secrets["DB_SERVER"]+
-                                     ';DATABASE='+database_name+
-                                     ';UID='+st.secrets["DB_USERNAME"]+
-                                     ';PWD='+ st.secrets["DB_PASSWORD"])
+    conn = pyodbc.connect('DRIVER={SQL Server};SERVER='+ "'"+st.secrets["DB_SERVER"]+ "'" +
+                                     ';DATABASE='+'bimbo'+
+                                     ';UID='+ "'" + st.secrets["DB_USERNAME"]+ "'"+
+                                     ';PWD='+ "'" + "'"st.secrets["DB_PASSWORD"]+ "'")
     
     # =============================================================================
     # Upload de dataframe  
@@ -98,7 +98,7 @@ def main():
             return
         df = get_df(file)
         
-        fast_server_nimerya(df,st.secrets["DB_NAME"],"sectionaccess_bimbo_prueba",'append')
+        fast_server_nimerya(df, "'" + st.secrets["DB_NAME"]+ "'","sectionaccess_bimbo_prueba",'append')
         
     else:
         st.write("esto para otra cosa")
