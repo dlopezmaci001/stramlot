@@ -9,9 +9,13 @@ import streamlit as st
 import pandas as pd
 import pyodbc
 from fast_to_sql import fast_to_sql as fts
+from sqlalchemy import create_engine
 # =============================================================================
 # Function creation
 # =============================================================================
+
+conn = create_engine('postgresql://'+"'" + st.secrets["DB_USERNAME"]+ "':"+ "'" + st.secrets["DB_PASSWORD"]+ "'@" "'"+st.secrets["DB_SERVER"]+ "':5439"+'/bimbo')
+
 
 def fast_server_nimerya(database_name,df,tablename,if_exists):
 
@@ -100,7 +104,7 @@ def main():
             return
         df = get_df(file)
         
-        fast_server_nimerya(df, "'" + st.secrets["DB_NAME"]+ "'","sectionaccess_bimbo_prueba",'append')
+        df.to_sql('sectionaccess_bimbo_prueba', conn, index=False, if_exists='append')
         
     else:
         st.write("esto para otra cosa")
