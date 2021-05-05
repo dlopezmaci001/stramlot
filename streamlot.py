@@ -101,7 +101,7 @@ def main():
             return
         df = get_df(file)
         
-        fast_server_nimerya(st.secrets["DB_NAME"],df,"sectionaccess_bimbo_prueba",'append')
+        fast_server_nimerya(df,st.secrets["DB_NAME"],"sectionaccess_bimbo_prueba",'append')
         
     else:
         st.write("esto para otra cosa")
