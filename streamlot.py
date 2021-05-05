@@ -54,23 +54,23 @@ def main():
     # Side bar 
     st.sidebar.header("Elija su opcion")
     task = st.sidebar.radio('Task', ['Alta Usuarios', 'Maestro'], 0)
-    
-    st.write('A general purpose data exploration app')
-    variable = st.text_area('Input name of client')
-    file = st.file_uploader("Upload file", type=['csv' 
-                                                 ,'xlsx'
-                                                 ,'pickle'])
-    if not file:
-        st.write("Upload a .csv or .xlsx file to get started")
-        return
-    df = get_df(file)
-    print(df.head())
-    
-
     if task == 'Alta Usuarios':
-        st.write("Carga Maestro")
+        st.write('A general purpose data exploration app')
+        variable = st.text_area('Input name of client')
+        file = st.file_uploader("Upload file", type=['csv' 
+                                                     ,'xlsx'
+                                                     ,'pickle'])
+        if not file:
+            st.write("Upload a .csv or .xlsx file to get started")
+            return
+        df = get_df(file)
+        print(df.head())
     else:
         st.write("esto para otra cosa")
+    
+    
+
+
     
 
 
