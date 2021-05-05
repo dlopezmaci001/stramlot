@@ -49,7 +49,7 @@ def get_df(file):
   return df
 
 def main():
-    st.image("https://erasmusintern.org/sites/default/files/styles/full_mediam/public/recruiter/logo/Nimerya%20Logo.png?itok=p3bSHht9")
+    st.image("https://media-exp1.licdn.com/dms/image/C4D1BAQESvTcWJlDJbA/company-background_10000/0/1562742007484?e=1620295200&v=beta&t=cd13ne_Mm4SgMN4QfzBqoxrL4j4TGi9SjDZPRsHiRzE")
     st.write('A general purpose data exploration app')
     variable = st.text_area('Input name of client')
     file = st.file_uploader("Upload file", type=['csv' 
