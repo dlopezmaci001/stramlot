@@ -71,7 +71,7 @@ password = login(login_blocks)
 
 if is_authenticated(password):
     clean_blocks(login_blocks)
-    st.secrets["DB_CODERUN"]
+    st.secrets["DB_PASSWORD"]
     main()
 elif password:
     st.info("Please enter a valid password")
