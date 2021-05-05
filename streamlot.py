@@ -10,9 +10,47 @@ import pandas as pd
 from PIL import Image 
 import streamlit as st
 from test import print_me
+import pyodbc
+from fast_to_sql import fast_to_sql as fts
 # =============================================================================
 # Function creation
 # =============================================================================
+def fast_server_nimerya(database_name,df,tablename,if_exists):
+
+    """ 
+    Parameters
+    ----------
+    database_name : TYPE
+       Add the name of the database you want to upload the df to.
+    df : TYPE
+       dataframe you want to upload to sql server
+    tablename : TYPE
+        Name of the table to upload to sql server.
+    if_exists : TYPE
+       If the table already exists "append".
+       If the table has to be deleted "replace".
+       
+   Important information
+   ---------------------
+   .to_sql will create the table in the SQL server, therefore the column names of
+    the dataframe will be the same column names you will have in the database. 
+
+    """       
+    conn = pyodbc.connect('DRIVER={SQL Server};SERVER='+st.secrets["DB_SERVER"]+
+                                     ';DATABASE='+database_name+
+                                     ';UID='+st.secrets["DB_USERNAME"]+
+                                     ';PWD='+ st.secrets["DB_PASSWORD"])
+    
+    # =============================================================================
+    # Upload de dataframe  
+    # =============================================================================
+    create_statement  = fts.fast_to_sql(df,tablename, conn, if_exists = if_exists) 
+    
+    # Commit upload actions and close connection
+    conn.commit()
+    conn.close()
+    
+    
 def is_authenticated(password):
     return password == st.secrets["DB_PASSWORD"]
 
@@ -62,8 +100,9 @@ def main():
             st.write("Upload a .csv or .xlsx file to get started")
             return
         df = get_df(file)
-        pr = ProfileReport(df, explorative=True)
-        st_profile_report(pr)
+        
+        fast_server_nimerya(st.secrets["DB_NAME"],df,"sectionaccess_bimbo_prueba",'append')
+        
     else:
         st.write("esto para otra cosa")
     
