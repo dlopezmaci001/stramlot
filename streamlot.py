@@ -7,7 +7,6 @@ Created on Fri Apr 30 11:53:11 2021
 
 import streamlit as st
 import pandas as pd
-import pyodbc
 from fast_to_sql import fast_to_sql as fts
 from sqlalchemy import create_engine
 # =============================================================================
